@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us - TimeTreasures</title>
+    <style>
+        .contact-hero {
+            min-height: 50vh;
+            background: linear-gradient(
+                rgba(20, 13, 3, 0.8),
+                rgba(20, 13, 3, 0.9)
+            ),
+            url('https://images.unsplash.com/photo-1516383740770-87d9b631e0b8?q=80&w=1170&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5f5dc;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .contact-content {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+            padding: 3rem;
+            border-radius: 20px;
+            color: #f5f5dc;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(242, 191, 26, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            background: rgba(242, 191, 26, 0.2);
+            transform: translateX(10px);
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 40px;
+        }
+        
+        .info-text {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #f2bf1a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .info-value {
+            color: #c4b79c;
+            line-height: 1.4;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-title {
+            font-size: 2.2rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f2bf1a;
+            box-shadow: 0 0 0 3px rgba(242, 191, 26, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #f2bf1a, #d4af37);
+            color: #2c2c2c;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(242, 191, 26, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .map-section {
+            margin-top: 4rem;
+            background: #f8f8f8;
+            padding: 3rem;
+            border-radius: 20px;
+        }
+        
+        .map-title {
+            font-size: 2.2rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f2bf1a, #d4af37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c2c2c;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .faq-section {
+            margin-top: 4rem;
+        }
+        
+        .faq-title {
+            font-size: 2.2rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .faq-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #f2bf1a;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            color: #f2bf1a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .success-message {
+            background: #4caf50;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+            text-align: center;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: #f5f5dc;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid #f2bf1a;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-main {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #c4b79c;
+        }
+        
+        .footer-credit {
+            font-size: 0.9rem;
+            color: #f2bf1a;
+            font-family: 'The Girl Next Door', cursive;
+            font-weight: 400;
+            margin-top: 0.6rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(242, 191, 26, 0.3);
+        }
+        
+        .footer-credit::before {
+            content: "✨ ";
+            margin-right: 0.3rem;
+        }
+        
+        .footer-credit::after {
+            content: " ✨";
+            margin-left: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .footer {
+                padding: 2rem 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TimeTreasures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>We're here to help you discover the perfect piece of history. Reach out to our expert team for any questions or assistance.</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div class="info-text">
+                            <span class="info-label">Address</span>
+                            <div class="info-value">
+                                123 History Lane<br>
+                                Ancient City, AC 12345<br>
+                                United States
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div class="info-text">
+                            <span class="info-label">Phone</span>
+                            <div class="info-value">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div class="info-text">
+                            <span class="info-label">Email</span>
+                            <div class="info-value">info@timetreasures.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <div class="info-text">
+                            <span class="info-label">Business Hours</span>
+                            <div class="info-value">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: Closed
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">💬</span>
+                        <div class="info-text">
+                            <span class="info-label">Live Chat</span>
+                            <div class="info-value">Available on our website<br>Monday - Friday: 9:00 AM - 5:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2 class="form-title">Send Us a Message</h2>
+                    <div class="success-message" id="successMessage">
+                        Thank you! Your message has been sent successfully.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="order">Order Status</option>
+                                <option value="shipping">Shipping & Returns</option>
+                                <option value="authentication">Authentication & Certificates</option>
+                                <option value="custom">Custom Orders</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Are your artifacts authentic?</h3>
+                        <p class="faq-answer">All our pieces are carefully crafted replicas using traditional methods and materials. We provide detailed historical documentation with each item, and clearly label all products as high-quality reproductions.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">What is your return policy?</h3>
+                        <p class="faq-answer">We offer a 30-day return policy for all items. Items must be returned in original condition with all packaging and documentation. Custom orders are non-returnable unless there's a manufacturing defect.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do you offer certificates of authenticity?</h3>
+                        <p class="faq-answer">Yes! Every purchase comes with a detailed certificate that includes historical context, craftsmanship details, and materials used. This ensures you understand the provenance and quality of your piece.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can you create custom pieces?</h3>
+                        <p class="faq-answer">Absolutely! We work with skilled artisans to create custom historical replicas. Contact us with your specific requirements, and we'll provide a quote and timeline for your unique piece.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do you ensure historical accuracy?</h3>
+                        <p class="faq-answer">Our team includes professional historians and archaeologists who research each piece extensively. We use museum-quality references and work with experts in specific historical periods to ensure accuracy.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">What are your shipping options?</h3>
+                        <p class="faq-answer">We offer standard shipping (5-7 business days), expedited shipping (2-3 business days), and overnight delivery. All items are carefully packaged to ensure safe arrival. Free shipping on orders over $200.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-main">© 2025 TimeTreasures. All rights reserved.</p>
+            <p class="footer-credit">Made with ❤️ by Angela Bera</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+                
+                // Store message in localStorage (simulate backend)
+                const messages = JSON.parse(localStorage.getItem('timetreasures_messages') || '[]');
+                messages.push({
+                    ...data,
+                    timestamp: new Date().toISOString(),
+                    id: Date.now()
+                });
+                localStorage.setItem('timetreasures_messages', JSON.stringify(messages));
+                
+            }, 1500);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.info-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

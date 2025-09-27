@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - TimeTreasures</title>
+    <style>
+        .about-hero {
+            min-height: 60vh;
+            background: linear-gradient(
+                rgba(20, 13, 3, 0.8),
+                rgba(20, 13, 3, 0.9)
+            ),
+            url('https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?q=80&w=1170&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5f5dc;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .about-content {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .story-text h2 {
+            font-size: 2.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .values-section {
+            background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            color: #f5f5dc;
+        }
+        
+        .values-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: rgba(242, 191, 26, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            border-color: #f2bf1a;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(242, 191, 26, 0.3);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .value-card p {
+            color: #c4b79c;
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            margin: 4rem 0;
+        }
+        
+        .team-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .member-role {
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .member-bio {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f2bf1a, #d4af37);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            color: #2c2c2c;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            background: #2c2c2c;
+            color: #f2bf1a;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-btn:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: #f5f5dc;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid #f2bf1a;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-main {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #c4b79c;
+        }
+        
+        .footer-credit {
+            font-size: 0.9rem;
+            color: #f2bf1a;
+            font-family: 'The Girl Next Door', cursive;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(242, 191, 26, 0.3);
+        }
+        
+        .footer-credit::before {
+            content: "✨ ";
+            margin-right: 0.3rem;
+        }
+        
+        .footer-credit::after {
+            content: " ✨";
+            margin-left: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .story-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer {
+                padding: 2rem 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TimeTreasures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1>About TimeTreasures</h1>
+                <p>Bridging the gap between ancient civilizations and modern collectors, we are passionate curators of history's most precious artifacts.</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="story-section">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2020 by a team of archaeologists and history enthusiasts, TimeTreasures was born from a simple yet profound mission: to make the wonders of ancient civilizations accessible to everyone.</p>
+                    <p>What started as a small collection of carefully sourced replicas has grown into a comprehensive marketplace where history comes alive. Every piece in our collection tells a story, carries the weight of centuries, and connects us to the remarkable people who came before us.</p>
+                    <p>We believe that owning a piece of history isn't just about possession—it's about becoming a guardian of culture, a keeper of stories, and a bridge between past and present.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1592252032050-34897f779223?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ancient artifacts collection">
+                </div>
+            </div>
+
+            <div class="values-section">
+                <h2 class="values-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">🏛️</span>
+                        <h3>Authenticity</h3>
+                        <p>Every piece is meticulously researched and crafted to reflect the true essence of its historical period, ensuring accuracy in every detail.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🛡️</span>
+                        <h3>Quality</h3>
+                        <p>We partner with skilled artisans who use traditional techniques and premium materials to create pieces that stand the test of time.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">📚</span>
+                        <h3>Education</h3>
+                        <p>We're not just selling artifacts—we're sharing knowledge, stories, and the rich cultural heritage behind each piece.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🌍</span>
+                        <h3>Global Heritage</h3>
+                        <p>Our collection celebrates the diverse civilizations that have shaped our world, from ancient Greece to medieval Europe and beyond.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">👥</span>
+                        <h3>Customer Experience</h3>
+                        <p>Providing a seamless, responsive, and engaging platform for history lovers and collectors.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">♻️</span>
+                        <h3>Sustainability</h3>
+                        <p>We're committed to sustainable practices, ensuring that our sourcing and production methods honor the environment and the cultures we represent.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Start Your Journey Through Time?</h2>
+                <p>Explore our carefully curated collection of historical treasures and find the perfect piece to connect you with the ancient world.</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="cta-btn">Browse Collection</a>
+                    <a href="contact.html" class="cta-btn">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-main">© 2025 TimeTreasures. All rights reserved.</p>
+            <p class="footer-credit">Made with ❤️ by Angela Bera</p>
+        </div>
+    </footer>
+</body>
+</html>

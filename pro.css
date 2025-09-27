@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+}
+
+/* Logo */
+header h1 {
+    font-family: "The Girl Next Door", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    color: #f2bf1a;
+}
+/* Navbar */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    margin: 0 15px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: gold;
+}
+/* Product Page Controls */
+.product-page {
+  padding: 3rem 2rem;
+  background: url('https://images.unsplash.com/photo-1655923478826-ef7c2d40820e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-attachment: fixed;
+  color: #fdf5e6;
+  min-height: 100vh;
+}
+
+.product-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  gap: 1rem;
+}
+
+.product-controls input,
+.product-controls select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.product-controls input {
+  flex: 1 1 60%;
+}
+
+.product-controls select {
+  flex: 1 1 35%;
+  background: #e2c275;
+  color: #2c2c2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Product List (vertical) */
+.product-list {
+  width: 90%;
+  max-width: none;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-item {
+  display: flex;
+  gap: 2rem;
+  background: rgba(90, 67, 35, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.product-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-item h3 {
+  font-size: 1.5rem;
+  color: #e2c275;
+  margin-bottom: 0.8rem;
+}
+
+.product-item p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.product-item .product-description {
+  font-size: 0.95rem !important;
+  font-weight: 400;
+  color: #c4b79c;
+  line-height: 1.4;
+  margin: 0.8rem 0;
+}
+
+.product-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buy-btn, .add-btn {
+  background: #f2bf1a;
+  color: #2c2c2c;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex: 0 0 auto;
+  max-width: 150px;
+}
+
+.buy-btn:hover, .add-btn:hover {
+  background: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(242, 191, 26, 0.3);
+}
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+    color: #f5f5dc;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    border-top: 3px solid #f2bf1a;
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #c4b79c;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    color: #f2bf1a;
+    font-family: 'The Girl Next Door', cursive;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(242, 191, 26, 0.3);
+}
+
+.footer-credit::before {
+    content: "✨ ";
+    margin-right: 0.3rem;
+}
+
+.footer-credit::after {
+    content: " ✨";
+    margin-left: 0.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .product-item img {
+    width: 100%;
+    height: 200px;
+  }
+  .product-controls {
+    flex-direction: column;
+  }
+  .product-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .buy-btn, .add-btn {
+    flex: none;
+  }
+  
+  .footer {
+        padding: 2rem 1rem 1.5rem;
+    }
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pro.css">
+    <title>Checkout - TimeTreasures</title>
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(90, 67, 35, 0.9);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        .checkout-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f2bf1a;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 2rem;
+        }
+        .checkout-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(60, 45, 20, 0.8);
+            border-radius: 10px;
+        }
+        .section-title {
+            color: #e2c275;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            color: #c4b79c;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #f2bf1a;
+            border-radius: 5px;
+            background: #2c2c2c;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(242, 191, 26, 0.3);
+        }
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .order-summary {
+            background: rgba(40, 30, 15, 0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #c4b79c;
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f2bf1a;
+            border-top: 1px solid #f2bf1a;
+            padding-top: 0.5rem;
+            margin-top: 1rem;
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .payment-method {
+            padding: 1rem;
+            border: 2px solid #f2bf1a;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(40, 30, 15, 0.5);
+        }
+        .payment-method:hover {
+            background: rgba(242, 191, 26, 0.2);
+        }
+        .payment-method.selected {
+            background: rgba(242, 191, 26, 0.3);
+            border-color: #d4af37;
+        }
+        .payment-method i {
+            font-size: 2rem;
+            color: #f2bf1a;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .place-order-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f2bf1a, #d4af37);
+            color: #2c2c2c;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .place-order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(242, 191, 26, 0.4);
+        }
+        .place-order-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .success-message {
+            text-align: center;
+            color: #4caf50;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        /* Footer Styling */
+        .footer {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: #f5f5dc;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 3px solid #f2bf1a;
+            margin-top: 0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-main {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #c4b79c;
+        }
+        
+        .footer-credit {
+            font-size: 0.9rem;
+            color: #f2bf1a;
+            font-family: 'The Girl Next Door', cursive;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(242, 191, 26, 0.3);
+        }
+        
+        .footer-credit::before {
+            content: "✨ ";
+            margin-right: 0.3rem;
+        }
+        
+        .footer-credit::after {
+            content: " ✨";
+            margin-left: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                padding: 2rem 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TimeTreasures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-page">
+        <div class="checkout-container">
+            <h1 class="checkout-title">Checkout</h1>
+            
+            <div class="checkout-section">
+                <h2 class="section-title">Order Summary</h2>
+                <div id="order-summary" class="order-summary"></div>
+            </div>
+
+            <div class="checkout-section">
+                <h2 class="section-title">Shipping Information</h2>
+                <form id="checkout-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="checkout-section">
+                <h2 class="section-title">Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="card">
+                        <i>💳</i>
+                        <div>Credit/Debit Card</div>
+                    </div>
+                    <div class="payment-method" data-method="paypal">
+                        <i>🅿️</i>
+                        <div>PayPal</div>
+                    </div>
+                    <div class="payment-method" data-method="crypto">
+                        <i>₿</i>
+                        <div>Cryptocurrency</div>
+                    </div>
+                </div>
+                
+                <div id="payment-details" style="display: none;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number *</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date *</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card *</label>
+                            <input type="text" id="cardName">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-message" id="success-message">
+                ✅ Order placed successfully! Thank you for your purchase.
+            </div>
+
+            <button type="button" id="place-order-btn" class="place-order-btn" disabled>
+                Place Order
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-main">© 2025 TimeTreasures. All rights reserved.</p>
+            <p class="footer-credit">Made with ❤️ by Angela Bera</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
